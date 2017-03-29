@@ -5,7 +5,18 @@ class LandingPage extends Component {
 
   render(){
     return(
-        <h1>Hello World!</h1>
+      <body>
+        <nav>
+          <h3>Sign Up</h3>
+          <h3>Login</h3>
+        </nav>
+          <div id="page-div">
+            <div class="logo">
+              <h1>INFINITE</h1>
+              <h1>YOGA</h1>
+            </div>
+          </div>
+      </body>
     );
   }
 }
