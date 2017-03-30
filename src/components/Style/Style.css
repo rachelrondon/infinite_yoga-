@@ -19,6 +19,14 @@ h1 {
   justify-content: center;
 }
 
+.login {
+  color:white;
+}
+
+.sign-up {
+  color:white;
+}
+
 h3 {
   color:white;
   font-family: 'Montserrat', sans-serif;
