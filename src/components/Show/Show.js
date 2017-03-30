@@ -9,7 +9,8 @@ class ShowPage extends Component {
     super(props)
 
     this.state = {
-      routines: []
+      routines: [],
+      currentImage: '',
     };
   }
 
@@ -19,7 +20,10 @@ class ShowPage extends Component {
     })
     .then((results) => {
       results.json().then((routines_data) => {
-        this.setState({routines: routines_data});
+        this.setState({
+          routines: routines_data,
+          currentImage: routines_data[1].image6
+        });
       });
     })
     .catch((err) => {
@@ -27,33 +31,29 @@ class ShowPage extends Component {
     });
   }
 
+  sayHello() {
+    console.log('jjjj', this.state.routines[1])
+    let which
+    setTimeout(() => {
+      this.setState({
+        currentImage: this.state.routines[1].image7
+      })
+      console.log('hello')
+    }, 6000)
+  }
 
-      render(){
+  render(){
       return(
         <div>
-          <div className="routineContainer">
-             {this.state.routines.map((routine) => {
-               console.log(routine.id);
-               return(
-                 <div key={routine.id} className="routineCard">
-                   <img className="rtImage" src={routine.image1} />
-                   <img className="rtImage" src={routine.image2} />
-                   <img className="rtImage" src={routine.image3} />
-                   <img className="rtImage" src={routine.image4} />
-                   <img className="rtImage" src={routine.image5} />
-                   <img className="rtImage" src={routine.image6} />
-                   <img className="rtImage" src={routine.image7} />
-                   <img className="rtImage" src={routine.image8} />
-                   <img className="rtImage" src={routine.image9} />
-                   <img className="rtImage" src={routine.image10} />
-                   <img className="rtImage" src={routine.image11} />
-                   <img className="rtImage" src={routine.image12} />
-                </div>
-               );
-             })}
-         </div>
-    </div>
-    );
-  }
-}
+          <div>
+            {this.sayHello()}
+          </div>
+          <div>
+            <h1>{this.state.currentImage}</h1>
+          </div>
+        </div>
+       );
+     }
+   }
+
 export default ShowPage;
