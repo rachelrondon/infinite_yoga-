@@ -36,19 +36,19 @@ class ShowPage extends Component {
                return(
                  <div key={routine.id} className="routineCard">
                    <h4>{routine.title}</h4>
-                   <h4>{routine.image1}</h4>
-                   <h4>{routine.image2}</h4>
-                   <h4>{routine.image3}</h4>
-                   <h4>{routine.image4}</h4>
-                   <h4>{routine.image5}</h4>
-                   <h4>{routine.image6}</h4>
-                   <h4>{routine.image7}</h4>
-                   <h4>{routine.image8}</h4>
-                   <h4>{routine.image9}</h4>
-                   <h4>{routine.image10}</h4>
-                   <h4>{routine.image11}</h4>
-                   <h4>{routine.image12}</h4>
-                 </div>
+                   <img className="rtImage" src={routine.image1} />
+                   <img className="rtImage"  src={routine.image2} />
+                   <img className="rtImage" src={routine.image3} />
+                   <img className="rtImage" src={routine.image4} />
+                   <img className="rtImage" src={routine.image5} />
+                   <img className="rtImage" src={routine.image6} />
+                   <img className="rtImage" src={routine.image7} />
+                   <img className="rtImage" src={routine.image8} />
+                   <img className="rtImage" src={routine.image9} />
+                   <img className="rtImage" src={routine.image10} />
+                   <img className="rtImage" src={routine.image11} />
+                   <img className="rtImage" src={routine.image12} />
+                </div>
                );
              })}
          </div>
