@@ -2,6 +2,9 @@ body {
   background-color: black;
 }
 
+h4 {
+  color:white;
+}
 h1 {
   color:white;
   font-family: 'Montserrat', sans-serif;
