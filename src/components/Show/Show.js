@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import update from 'react-addons-update';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
-
+import ReactTimeout from 'react-timeout';
 
 class ShowPage extends Component {
   constructor(props) {
@@ -27,6 +27,7 @@ class ShowPage extends Component {
     });
   }
 
+
       render(){
       return(
         <div>
@@ -35,9 +36,8 @@ class ShowPage extends Component {
                console.log(routine.id);
                return(
                  <div key={routine.id} className="routineCard">
-                   <h4>{routine.title}</h4>
                    <img className="rtImage" src={routine.image1} />
-                   <img className="rtImage"  src={routine.image2} />
+                   <img className="rtImage" src={routine.image2} />
                    <img className="rtImage" src={routine.image3} />
                    <img className="rtImage" src={routine.image4} />
                    <img className="rtImage" src={routine.image5} />
