@@ -11,11 +11,11 @@ class Login extends Component {
         </nav>
           <div id="page-div">
             <div class="logo">
-              <h1>Login In Page!</h1>
+              <button href="/level"></button>
             </div>
           </div>
       </body>
-  );
-}
+    );
+  }
 }
 export default Login;

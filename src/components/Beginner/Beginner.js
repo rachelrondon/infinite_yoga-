@@ -4,12 +4,12 @@ import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 import ReactTimeout from 'react-timeout';
 
-class ShowPage extends Component {
+class Beginner extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      moves: [
+      routines: [
         {
           milliseconds: 5000
         }
@@ -20,16 +20,16 @@ class ShowPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/moves/show`, {
+    fetch(`http://localhost:8000/routines/beginner`, {
       method: 'GET'
     })
     .then((results) => {
       results.json().then((moves_data) => {
         this.setState({
-          moves: moves_data,
-          currentImage: moves_data[0].image,
-          name: moves_data[0].name,
-          audio: moves_data[0].audio,
+          routines: routines_data,
+          currentImage: routines_data[0].image,
+          name: routines_data[0].name,
+          audio: routines_data[0].audio,
           count: this.state.count + 1
         });
       });
@@ -41,16 +41,16 @@ class ShowPage extends Component {
 
   showImage() {
 
-    console.log('jjjj', this.state.moves)
+    console.log('jjjj', this.state.routines)
     setInterval(() => {
       this.setState({
-        currentImage: this.state.moves[this.state.count].image,
-        name: this.state.moves[this.state.count].name,
-        audio: this.state.moves[this.state.count].audio,
+        currentImage: this.state.routines[this.state.count].image,
+        name: this.state.routines[this.state.count].name,
+        audio: this.state.routines[this.state.count].audio,
         count: this.state.count + 1,
       })
       console.log('hello')
-    }, this.state.moves[0].milliseconds)
+    }, this.state.routines[0].milliseconds)
   }
 
   render(){
@@ -68,4 +68,4 @@ class ShowPage extends Component {
      }
    }
 
-export default ShowPage;
+export default Beginner;

@@ -1,10 +1,11 @@
+
 import React, { Component } from "react";
 import update from 'react-addons-update';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 import ReactTimeout from 'react-timeout';
 
-class ShowPage extends Component {
+class Advanced extends Component {
   constructor(props) {
     super(props)
 
@@ -68,4 +69,4 @@ class ShowPage extends Component {
      }
    }
 
-export default ShowPage;
+export default Advanced;
