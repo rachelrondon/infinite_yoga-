@@ -24,6 +24,8 @@ class ShowPage extends Component {
         this.setState({
           moves: moves_data,
           currentImage: moves_data[0].image,
+          name: moves_data[0].name,
+          audio: moves_data[0].audio,
           count: this.state.count + 1
         });
       });
@@ -39,7 +41,9 @@ class ShowPage extends Component {
     setTimeout(() => {
       this.setState({
         currentImage: this.state.moves[this.state.count].image,
-        count: this.state.count + 1
+        name: this.state.moves[this.state.count].name,
+        audio: this.state.moves[this.state.count].audio,
+        count: this.state.count + 1,
       })
       console.log('hello')
     }, this.state.moves[0].milliseconds)
@@ -53,6 +57,8 @@ class ShowPage extends Component {
           </div>
           <div>
             <img src={this.state.currentImage}></img>
+            <h1>{this.state.name}</h1>
+            <h1>{this.state.audio}</h1>
           </div>
         </div>
        );
