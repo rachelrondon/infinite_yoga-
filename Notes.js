@@ -1,3 +1,7 @@
+Notes:
+
+// Show Page:
+
 import React, { Component } from "react";
 import update from 'react-addons-update';
 import { Link } from 'react-router';
@@ -9,22 +13,22 @@ class ShowPage extends Component {
     super(props)
 
     this.state = {
-      moves: [],
+      routines: [],
       currentImage: '',
       count: 0
     };
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/moves/show`, {
+    fetch(`http://localhost:8000/routines/show`, {
       method: 'GET'
     })
     .then((results) => {
-      results.json().then((moves_data) => {
+      results.json().then((routines_data) => {
         this.setState({
-          moves: moves_data,
-          currentImage: moves_data[0].image,
-          count: this.state.count + 1
+          routines: routines_data,
+          currentImage: routines_data[0].image1,
+          count: this.state.counter + 1
         });
       });
     })
@@ -35,16 +39,24 @@ class ShowPage extends Component {
 
   showImage() {
 
-    console.log('jjjj', this.state.moves)
+    console.log('jjjj', this.state.routines[0])
     setTimeout(() => {
       this.setState({
-        currentImage: this.state.moves[Math.floor(Math.random() * this.state.moves.length)].image,
-        count: this.state.count + 1
+        currentImage: this.state.routines[0].image2,
+        count: this.state.counter + 1
       })
+      console.log(count)
       console.log('hello')
-    }, this.state.moves[0].milliseconds)
+    }, this.state.routines[0].time2)
   }
 
+changeImage() {
+  if(this.state.counter + 1) {
+    return(
+      this.state.routines[0]
+    )
+  }
+}
 
   render(){
       return(

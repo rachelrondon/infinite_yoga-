@@ -33,7 +33,7 @@ class NewRoutine extends Component {
         time11: '',
         image12: '',
         time12: '',
-        user_id: 3
+        user_id: 5
       }
     };
   }
