@@ -38,13 +38,12 @@ class ShowPage extends Component {
     console.log('jjjj', this.state.moves)
     setTimeout(() => {
       this.setState({
-        currentImage: this.state.moves[Math.floor(Math.random() * this.state.moves.length)].image,
+        currentImage: this.state.moves[this.state.count].image,
         count: this.state.count + 1
       })
       console.log('hello')
     }, this.state.moves[0].milliseconds)
   }
-
 
   render(){
       return(
