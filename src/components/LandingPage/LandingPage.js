@@ -61,7 +61,7 @@ class LandingPage extends Component {
               <div key={routine.id} className="routineCard">
                 <h1>{routine.title}</h1>
                 <h1>{routine.level}</h1>
-                <>Play Routine</a></div>
+              <div><a>Play Routine</a></div>
               </div>
               )
               })}
