@@ -143,3 +143,12 @@ a {
   height: 100%;
   width: 100%;
 }
+
+
+@media (max-width: 600px) {
+  #routine-info{
+  font-size: 10px;
+  padding-top: 20px;
+  /*flex-direction: column-reverse;*/
+  }
+}
