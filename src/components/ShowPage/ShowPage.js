@@ -27,6 +27,7 @@ class ShowPage extends Component {
       results.json().then((routines_data) => {
         this.setState({
           routines: routines_data,
+          image_credt: routines_data[0].image_credt,
           currentImage: routines_data[0].image,
           name: routines_data[0].name,
           audio: routines_data[0].audio,
@@ -57,9 +58,11 @@ class ShowPage extends Component {
           <div>
             {this.showImage()}
           </div>
-          <div>
-            <img src={this.state.currentImage}></img>
-            <h4>{this.state.name}</h4>
+          <div className="routineCard">
+          <nav id="nav-bar">
+            <h4 id="move-name">{this.state.name}</h4>
+          </nav>
+            <img id="move-image" src={this.state.currentImage}></img>
           </div>
         </div>
        );

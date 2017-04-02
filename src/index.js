@@ -4,6 +4,10 @@ import { Route, Router, browserHistory } from "react-router";
 
 import './components/Style/Style.css';
 
+import './vendor/materialize/css/materialize.css';
+import './vendor/materialize/css/materialize.min.css';
+// import './vendor/materialize/fonts/'
+
 import LandingPage from './components/LandingPage/LandingPage';
 import Login from './components/Login/Login';
 import NewUser from './components/NewUser/NewUser';
