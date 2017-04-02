@@ -3,6 +3,7 @@ import update from 'react-addons-update';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 import ReactTimeout from 'react-timeout';
+import SoundCloud from 'react-soundcloud-widget';
 
 class ShowPage extends Component {
   constructor(props) {
@@ -52,9 +53,19 @@ class ShowPage extends Component {
     }, this.state.routines[0].milliseconds)
   }
 
+  onPlay() {
+    console.log('playing');
+  }
+
   render(){
       return(
         <div>
+          <div id="sound-cloud-div">
+            <SoundCloud
+              url={'https://soundcloud.com/lindimusic1/sia-cheap-trills-ft-sean-paul-lindi-remix'}
+              onPlay={this.onPlay}
+            />
+          </div>
           <div>
             {this.showImage()}
           </div>
