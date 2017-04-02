@@ -25,7 +25,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/routines`, {
+    fetch(`http://localhost:8000/routines/`, {
       method: 'GET'
     })
     .then((results) => {
@@ -39,14 +39,42 @@ class LandingPage extends Component {
     });
   }
 
+  handleSideNavClick() {
+    this.setState({
+      SideNavClick: true
+    })
+  }
+
+  renderSideNav() {
+    if(this.state.SideNavClick) {
+      return(
+        <div className="hide-on-small-only">
+          <form action="/routines/search" id="search-form">
+          <div className="input-field">
+            <input name="search" id="search" type="text" required placeholder=""></input>
+            <label id="the-search-icon" id="search-icon" className="label-icon" for="search"><i className="material-icons">search</i></label>
+            <a className="white-text" type="submit" id="the-button">ENTER</a>
+          </div>
+          </form>
+        </div>
+      )
+    }
+  }
+
   render(){
     return(
       <div>
         <div id="landing-page-div">
           <nav id="nav-bar">
-            <h4 id="logo-nav">DAILY ROUTINE</h4>
-          </nav>
-
+            <div className="nav-wrapper">
+              <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
+              {this.state.routines.map((routine) => {
+                return(
+                  <h1 id="routine-info">{routine.title} | {routine.level}</h1>
+                )
+                })}
+          </div>
+        </nav>
         <body id="page-body">
           <div className="routineContainer">
             {this.state.routines.map((routine) => {
@@ -54,9 +82,6 @@ class LandingPage extends Component {
                 <a href={`/routines/${routine.id}`} >
                   <div key={routine.id} className="routineCard">
                     <img id="main-image" src={routine.thumbnail}></img>
-                    <div id="routine-info-div">
-                      <h1 id="routine-info">{routine.title} | {routine.level}</h1>
-                    </div>
                   </div>
                 </a>
              )
@@ -64,6 +89,7 @@ class LandingPage extends Component {
            </div>
         </body>
       </div>
+      <div id="footer"></div>
     </div>
       );
     }
