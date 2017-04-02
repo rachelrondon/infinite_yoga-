@@ -139,16 +139,11 @@ a {
   width: 250px;
 }
 
-#main-img {
-  height: 100%;
-  width: 100%;
-}
-
 
 @media (max-width: 600px) {
   #routine-info{
   font-size: 10px;
-  padding-top: 20px;
+  padding-top: 12px;
   /*flex-direction: column-reverse;*/
   }
 }
