@@ -14,8 +14,13 @@ class LandingPage extends Component {
           milliseconds: 5000
         }
       ],
+      quotes: [
+        'NAMASTE',
+        'WABI-SABI',
+      ],
       currentImage: '',
-      count: 0
+      count: 0,
+      time: 0
     };
   }
 
@@ -48,46 +53,51 @@ class LandingPage extends Component {
     });
   }
 
+  // getQuote() {
+  //   this.setState({
+  //     quote:(this.state.quote.lenth * Math.random)
+  //   })
+  // }
+
   render(){
     return(
       <div>
         <div id="landing-page-div">
         <nav id="nav-bar">
-          <h1 className="logo">Daily Routine</h1>
-            <div id="search-div">
-              <form action="/routines/search" id="search-form">
-              <div className="input-field">
-                <input name="search" id="search" type="text" required placeholder="search bar"></input>
-              </div>
-            </form>
-            </div>
+          {/* <h6>YOUR DAILY DOSE OF YOGA & TRAVEL</h6> */}
+          {/* <h1> + </h1> */}
+          <h5 id="logo-nav">DAILY ROUTINE</h5>
+          {/* <h1> + </h1>
+          <h5>TRAVEL</h5> */}
+
         </nav>
+        {/* <div id="search-div">
+          <form action="/routines/search" id="search-form">
+          <div className="input-field">
+          <input name="search" id="search" type="text" required placeholder="search bar"></input>
         </div>
-        <div id="img-box-div">
-          {this.state.images.map((image) => {
-            return(
-                <div key={image.id} id="img-box-section">
-                  <img className="img-lp" src={image.url}></img>
-                </div>
-             )
-          })}
+      </form>
+    </div> */}
+        <body id="page-body">
+        <div id="the-logo-div">
+          {/* <h5 className="logo">DAILY ROUTINE</h5> */}
         </div>
         <div className="routineContainer">
           {this.state.routines.map((routine) => {
             return(
               <a href={`/routines/${routine.id}`} >
                 <div key={routine.id} className="routineCard">
-                  <h4>{routine.title} | {routine.level}</h4>
-                  <img className="thumbnail" src={routine.thumbnail}></img>
+                  <h1>{routine.title} | {routine.level}</h1>
+                  {/* <img className="thumbnail" src={routine.thumbnail}></img> */}
                   {/* <button href={`/routines/${routine.id}/moves`} type="submit" id="the-button">ENTER</button> */}
                 </div>
               </a>
-             )
-          })}
-        </div>
-        <div class="page-body">
-          </div>
+           )
+           })}
+         </div>
+     </body>
       </div>
+    </div>
       );
     }
   }

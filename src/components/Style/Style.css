@@ -3,12 +3,35 @@ body {
 }
 
 h4 {
-  color:black;
-}
-h1 {
   color:white;
-  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  color:#D9E3F7;
+  font-family:'Raleway', sans-serif;
   font-size: 20px;
+}
+
+h5 {
+  color:#D9E3F7;
+  border-color:#001E40;
+  font-family:'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+
+h6 {
+  color:white;
+  font-family:'Raleway', sans-serif;
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  color:white;
 }
 
 h2 {
@@ -18,7 +41,9 @@ h2 {
 }
 
 nav {
-  background-color: black;
+  background-color:#001E40;
+  height:50px;
+  text-align: center;
 }
 
 #page-div {
@@ -38,6 +63,23 @@ nav {
   justify-content: center;
 }
 
+.page-body {
+  display: flex;
+  align-items: center;
+}
+
+#the-logo-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+.logo {
+  color:black;
+  font-family: 'Comfortaa';
+  font-size: 40px;
+  margin: inherit;
+}
+
 .login {
   color:white;
 }
@@ -52,12 +94,9 @@ nav {
 }
 
 #nav-bar {
-  /*padding-top: 30px;*/
-  /*position:fixed;*/
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
   width: 100%;
 }
 
@@ -86,10 +125,7 @@ h3 {
   width: 100%;
 }
 
-.page-body {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .routineContainer {
   display: flex;
@@ -130,4 +166,9 @@ h3 {
 .thumbnail {
   height: 250px;
   width: 250px;
+}
+
+#main-img {
+  height: 100%;
+  width: 100%;
 }

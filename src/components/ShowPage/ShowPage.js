@@ -59,7 +59,7 @@ class ShowPage extends Component {
           </div>
           <div>
             <img src={this.state.currentImage}></img>
-            <h1>{this.state.name}</h1>
+            <h4>{this.state.name}</h4>
           </div>
         </div>
        );
