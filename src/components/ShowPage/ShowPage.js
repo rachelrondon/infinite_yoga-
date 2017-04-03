@@ -21,7 +21,7 @@ class ShowPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/routines/1`, {
+    fetch(`http://localhost:8000/routines/${this.props.params.id}`, {
       method: 'GET'
     })
     .then((results) => {
@@ -62,7 +62,7 @@ class ShowPage extends Component {
         <div>
           <div id="sound-cloud-div">
             <SoundCloud
-              url={'https://soundcloud.com/lindimusic1/sia-cheap-trills-ft-sean-paul-lindi-remix'}
+              url={this.state.audio}
               onPlay={this.onPlay}
             />
           </div>

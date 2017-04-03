@@ -76,20 +76,23 @@ class LandingPage extends Component {
           </div>
         </nav>
         <body id="page-body">
-          <div className="routineContainer">
-            {this.state.routines.map((routine) => {
-              return(
-                <a href={`/routines/${routine.id}`} >
-                  <div key={routine.id} className="routineCard">
-                    <img id="main-image" src={routine.thumbnail}></img>
-                  </div>
-                </a>
-             )
-             })}
+          <div>
+            <div className="routineContainer">
+              {this.state.routines.map((routine) => {
+                return(
+                  <a href={`/routines/${routine.id}`} >
+                    <div key={routine.id} className="routineCard">
+                      <h1 id="routine-info"><i id="play-arrow" className="material-icons">play_arrow</i>{routine.title} | {routine.level}</h1>
+                      <img id="main-image" src={routine.thumbnail}></img>
+                    </div>
+                  </a>
+               )
+               })}
+             </div>
            </div>
         </body>
       </div>
-      <div id="footer"></div>
+      {/* <div id="footer"></div> */}
     </div>
       );
     }
