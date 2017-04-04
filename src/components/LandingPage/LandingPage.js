@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
 
 
 class LandingPage extends Component {
@@ -25,7 +24,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/routines/`, {
+    fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
       method: 'GET'
     })
     .then((results) => {

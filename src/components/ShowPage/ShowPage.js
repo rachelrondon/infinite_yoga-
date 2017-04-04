@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import update from 'react-addons-update';
-import { Link } from 'react-router';
-import { browserHistory } from 'react-router';
-import ReactTimeout from 'react-timeout';
 import SoundCloud from 'react-soundcloud-widget';
 
 class ShowPage extends Component {
@@ -21,7 +17,7 @@ class ShowPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/routines/${this.props.params.id}`, {
+    fetch(`https://thedailyroutine.herokuapp.com/${this.props.params.id}`, {
       method: 'GET'
     })
     .then((results) => {
