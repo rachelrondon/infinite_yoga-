@@ -33,6 +33,8 @@ class ShowPage extends Component {
           name: routines_data[0].name,
           audio: routines_data[0].audio,
           count: this.state.count + 1
+        }, () => {
+          this.showImage()
         });
       });
     })
@@ -42,14 +44,15 @@ class ShowPage extends Component {
   }
 
   showImage() {
+    console.log('called', this.state.count)
     setInterval(() => {
+      console.log(this.state.count)
       this.setState({
         currentImage: this.state.routines[this.state.count].image,
         name: this.state.routines[this.state.count].name,
         audio: this.state.routines[this.state.count].audio,
         count: this.state.count + 1,
       })
-      console.log('hello')
     }, this.state.routines[0].milliseconds)
   }
 
@@ -60,20 +63,24 @@ class ShowPage extends Component {
   render(){
       return(
         <div>
+          <div>
+            {this.showImage}
+          </div>
+          <div className="routineCard">
+            <div className="wrapper">
+                <img id="move-image" src={this.state.currentImage}></img>
+                <div className="overlay">
+                  <div id="move-bar">
+                    <h4 id="move-name">{this.state.name}</h4>
+                  </div>
+                </div>
+            </div>
+          </div>
           <div id="sound-cloud-div">
             <SoundCloud
               url={this.state.audio}
               onPlay={this.onPlay}
             />
-          </div>
-          <div>
-            {this.showImage()}
-          </div>
-          <div className="routineCard">
-          <nav id="nav-bar">
-            <h4 id="move-name">{this.state.name}</h4>
-          </nav>
-            <img id="move-image" src={this.state.currentImage}></img>
           </div>
         </div>
        );

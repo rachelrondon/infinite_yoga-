@@ -68,31 +68,26 @@ class LandingPage extends Component {
           <nav id="nav-bar">
             <div className="nav-wrapper">
               <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
-              {this.state.routines.map((routine) => {
-                return(
-                  <h1 id="routine-info">{routine.title} | {routine.level}</h1>
-                )
-                })}
           </div>
         </nav>
         <body id="page-body">
-          <div>
-            <div className="routineContainer">
-              {this.state.routines.map((routine) => {
-                return(
-                  <a href={`/routines/${routine.id}`} >
-                    <div key={routine.id} className="routineCard">
-                      <h1 id="routine-info"><i id="play-arrow" className="material-icons">play_arrow</i>{routine.title} | {routine.level}</h1>
-                      <img id="main-image" src={routine.thumbnail}></img>
-                    </div>
-                  </a>
-               )
-               })}
-             </div>
-           </div>
-        </body>
+         <div className="routineContainer">
+           {this.state.routines.map((routine) => {
+             return(
+               <a href={`/routines/${routine.id}`} >
+                 <div key={routine.id} className="routineCard">
+                   <img id="main-image" src={routine.thumbnail}></img>
+                   <div id="routine-info">
+                     <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
+                     <h1 id="routine-info">{routine.title} | {routine.level}</h1>
+                  </div>
+                 </div>
+               </a>
+            )
+            })}
+          </div>
+       </body>
       </div>
-      {/* <div id="footer"></div> */}
     </div>
       );
     }
