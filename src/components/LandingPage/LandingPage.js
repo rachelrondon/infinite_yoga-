@@ -25,19 +25,20 @@ class LandingPage extends Component {
 
   componentDidMount() {
     fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
-      method: 'GET',
-      mode: 'no-cors'
+      method: 'GET'
     })
     .then((results) => {
       results.json().then((routines_data) => {
-        this.setState({routines: routines_data});
-        console.log(routines_data)
-        });
-      })
+      this.setState({routines: routines_data});
+      console.log(routines_data)
+    })
     .catch((err) => {
       console.log(err);
     });
   }
+}
+
+
 
   handleSideNavClick() {
     this.setState({
