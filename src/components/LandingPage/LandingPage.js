@@ -25,7 +25,8 @@ class LandingPage extends Component {
 
   componentDidMount() {
     fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
-      method: 'GET'
+      method: 'GET',
+      mode: 'no-cors'
     })
     .then((results) => {
       results.json().then((routines_data) => {

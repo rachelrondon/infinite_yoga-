@@ -19,7 +19,6 @@ class ShowPage extends Component {
   componentDidMount() {
     fetch(`https://thedailyroutine.herokuapp.com/${this.props.params.id}`, {
       method: 'GET',
-      mode: 'no-cors'
     })
     .then((results) => {
       results.json().then((routines_data) => {
