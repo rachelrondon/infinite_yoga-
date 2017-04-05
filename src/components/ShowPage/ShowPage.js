@@ -17,6 +17,7 @@ class ShowPage extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.params.id)
     fetch(`https://thedailyroutine.herokuapp.com/${this.props.params.id}`, {
       method: 'GET',
     })
