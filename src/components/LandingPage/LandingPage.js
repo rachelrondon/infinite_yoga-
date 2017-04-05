@@ -72,12 +72,12 @@ class LandingPage extends Component {
   }
 
   renderRoutine() {
-    console.log('routine rendering', this.state)
+    // console.log('routine rendering', this.state.routines[0].id, this.state.routines[1].id, this.state.routines[2].id)
     return this.state.routines.map((routine) => {
       console.log(routine.id)
       return(
 
-        <a href={`/routines/${routine.id}`} >
+        <a href={`https://thedailyroutine.herokuapp.com/routines/${routine.id}`} >
           <div key={routine.id} className="routineCard">
             <img id="main-image" src={routine.thumbnail}></img>
             <div id="routine-info">
