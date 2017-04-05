@@ -77,7 +77,7 @@ class LandingPage extends Component {
       console.log(routine.id)
       return(
 
-        <a href={`https://thedailyroutine.herokuapp.com/routines/${routine.id}`} >
+        <button href={`https://thedailyroutine.herokuapp.com/routines/${routine.id}`} ></button>
           <div key={routine.id} className="routineCard">
             <img id="main-image" src={routine.thumbnail}></img>
             <div id="routine-info">
@@ -85,11 +85,10 @@ class LandingPage extends Component {
               <h1 id="routine-info">{routine.title} | {routine.level}</h1>
            </div>
           </div>
-        </a>
+
       )
      }
     )
-
   }
 
   render(){
