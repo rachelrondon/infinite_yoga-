@@ -6,7 +6,6 @@ import './components/Style/Style.css';
 
 import './vendor/materialize/css/materialize.css';
 import './vendor/materialize/css/materialize.min.css';
-// import './vendor/materialize/fonts/'
 
 import LandingPage from './components/LandingPage/LandingPage';
 import ShowPage from './components/ShowPage/ShowPage';

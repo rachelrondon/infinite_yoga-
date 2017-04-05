@@ -18,7 +18,7 @@ class ShowPage extends Component {
 
   componentDidMount() {
     console.log(this.props.params.id)
-    fetch(`https://localhost3000/routines/${this.props.params.id}`, {
+    fetch(`http://localhost:3000/routines/${this.props.params.id}`, {
       method: 'GET',
     })
     .then((results) => {

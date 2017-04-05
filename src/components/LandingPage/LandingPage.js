@@ -24,27 +24,19 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://localhost3000/routines`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json'
-      }
+    fetch(`http://localhost:8000/routines/`, {
+      method: 'GET'
     })
-    .then(r => r.json())
-    .then((routines_data) => {
-      console.log('hi', routines_data)
-      this.setState({
-        routines: routines_data
-      }, () => {
-        console.log('post tss', this.state)
-        this.renderRoutine();
-      });
-    })
+    .then((results) => {
+      results.json().then((routines_data) => {
+        this.setState({routines: routines_data});
+        console.log(routines_data)
+        });
+      })
     .catch((err) => {
       console.log(err);
     });
   }
-
 
   handleSideNavClick() {
     this.setState({
@@ -68,26 +60,6 @@ class LandingPage extends Component {
     }
   }
 
-  renderRoutine() {
-    // console.log('routine rendering', this.state.routines[0].id, this.state.routines[1].id, this.state.routines[2].id)
-    return this.state.routines.map((routine) => {
-      console.log(routine.id)
-      return(
-
-        <a href={`https://localhost3000/routines/${routine.id}`} >
-          <div key={routine.id} className="routineCard">
-            <img id="main-image" src={routine.thumbnail}></img>
-            <div id="routine-info">
-              <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
-              <h1 id="routine-info">{routine.title} | {routine.level}</h1>
-           </div>
-          </div>
-        </a>
-      )
-     }
-    )
-  }
-
   render(){
     return(
       <div>
@@ -99,7 +71,19 @@ class LandingPage extends Component {
         </nav>
         <body id="page-body">
          <div className="routineContainer">
-           {this.renderRoutine()}
+           {this.state.routines.map((routine) => {
+             return(
+               <a href={`/routines/${routine.id}`} >
+                 <div key={routine.id} className="routineCard">
+                   <img id="main-image" src={routine.thumbnail}></img>
+                   <div id="routine-info">
+                     <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
+                     <h1 id="routine-info">{routine.title} | {routine.level}</h1>
+                  </div>
+                 </div>
+               </a>
+            )
+            })}
           </div>
        </body>
       </div>
