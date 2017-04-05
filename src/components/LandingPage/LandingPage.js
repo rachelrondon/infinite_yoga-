@@ -46,9 +46,6 @@ class LandingPage extends Component {
   }
 
 
-
-
-
   handleSideNavClick() {
     this.setState({
       SideNavClick: true
@@ -77,7 +74,7 @@ class LandingPage extends Component {
       console.log(routine.id)
       return(
 
-        <button href={`https://thedailyroutine.herokuapp.com/routines/${routine.id}`} ></button>
+        <a href={`https://localhost3000/${routine.id}`} >
           <div key={routine.id} className="routineCard">
             <img id="main-image" src={routine.thumbnail}></img>
             <div id="routine-info">
@@ -85,7 +82,7 @@ class LandingPage extends Component {
               <h1 id="routine-info">{routine.title} | {routine.level}</h1>
            </div>
           </div>
-
+        </a>
       )
      }
     )
