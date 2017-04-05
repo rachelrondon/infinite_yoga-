@@ -74,7 +74,9 @@ class LandingPage extends Component {
   renderRoutine() {
     console.log('routine rendering', this.state)
     return this.state.routines.map((routine) => {
+      console.log(routine.id)
       return(
+
         <a href={`/routines/${routine.id}`} >
           <div key={routine.id} className="routineCard">
             <img id="main-image" src={routine.thumbnail}></img>
