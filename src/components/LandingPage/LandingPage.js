@@ -24,15 +24,21 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
-      method: 'GET'
+    fetch(`https://thedailyroutine.herokuapp.com/routines`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
     })
-    .then((results) => {
-      results.json()
-    })
+    .then(r => r.json())
     .then((routines_data) => {
-      this.setState({routines: routines_data});
-      console.log(routines_data)
+      console.log('hi', routines_data)
+      this.setState({
+        routines: routines_data
+      }, () => {
+        console.log('post tss', this.state)
+        this.renderRoutine();
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -65,6 +71,25 @@ class LandingPage extends Component {
     }
   }
 
+  renderRoutine() {
+    console.log('routine rendering', this.state)
+    return this.state.routines.map((routine) => {
+      return(
+        <a href={`/routines/${routine.id}`} >
+          <div key={routine.id} className="routineCard">
+            <img id="main-image" src={routine.thumbnail}></img>
+            <div id="routine-info">
+              <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
+              <h1 id="routine-info">{routine.title} | {routine.level}</h1>
+           </div>
+          </div>
+        </a>
+      )
+     }
+    )
+
+  }
+
   render(){
     return(
       <div>
@@ -76,19 +101,7 @@ class LandingPage extends Component {
         </nav>
         <body id="page-body">
          <div className="routineContainer">
-           {this.state.routines.map((routine) => {
-             return(
-               <a href={`/routines/${routine.id}`} >
-                 <div key={routine.id} className="routineCard">
-                   <img id="main-image" src={routine.thumbnail}></img>
-                   <div id="routine-info">
-                     <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
-                     <h1 id="routine-info">{routine.title} | {routine.level}</h1>
-                  </div>
-                 </div>
-               </a>
-            )
-            })}
+           {this.renderRoutine()}
           </div>
        </body>
       </div>
