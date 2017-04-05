@@ -28,7 +28,9 @@ class LandingPage extends Component {
       method: 'GET'
     })
     .then((results) => {
-      results.json().then((routines_data) => {
+      results.json()
+    })
+    .then((routines_data) => {
       this.setState({routines: routines_data});
       console.log(routines_data)
     })
@@ -36,7 +38,8 @@ class LandingPage extends Component {
       console.log(err);
     });
   }
-}
+
+
 
 
 
