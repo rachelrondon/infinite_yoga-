@@ -24,7 +24,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/routines/`, {
+    fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
       method: 'GET'
     })
     .then((results) => {
@@ -73,7 +73,7 @@ class LandingPage extends Component {
          <div className="routineContainer">
            {this.state.routines.map((routine) => {
              return(
-               <a href={`/routines/${routine.id}`} >
+               <a href={`https://thedailyroutine.herokuapp.com/routines/${routine.id}`} >
                  <div key={routine.id} className="routineCard">
                    <img id="main-image" src={routine.thumbnail}></img>
                    <div id="routine-info">

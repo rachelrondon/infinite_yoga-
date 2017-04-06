@@ -1,6 +1,6 @@
 if [ $# -eq 0 ]
     then
-        echo "You must specify a Heroku app name!"
+        echo "dailyroutineyogaapp"
         exit 1
 fi
 
