@@ -25,7 +25,7 @@ class ShowPage extends Component {
       results.json().then((routines_data) => {
         this.setState({
           routines: routines_data,
-          image_credt: routines_data[0].image_credt,
+          image_credit: routines_data[0].image_credit,
           currentImage: routines_data[0].image,
           name: routines_data[0].name,
           audio: routines_data[0].audio,
