@@ -74,7 +74,7 @@ class LandingPage extends Component {
          <div className="routineContainer">
            {this.state.routines.map((routine) => {
              return(
-              <Link href={`https://dailyroutineyogaapp.herokuapp.com/routines/${routine.id}`} >
+              <Link href={`/routines/${routine.id}`} >
                  <div key={routine.id} className="routineCard">
                    <img id="main-image" src={routine.thumbnail}></img>
                    <div id="routine-info">
