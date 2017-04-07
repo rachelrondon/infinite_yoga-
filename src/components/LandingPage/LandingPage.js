@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
 
 
 class LandingPage extends Component {
@@ -25,7 +24,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://thedailyroutine.herokuapp.com/routines/`, {
+    fetch(`http://localhost:8000/routines/`, {
       method: 'GET'
     })
     .then((results) => {
@@ -74,7 +73,7 @@ class LandingPage extends Component {
          <div className="routineContainer">
            {this.state.routines.map((routine) => {
              return(
-              <Link href={`/routines/${routine.id}`} >
+               <a href={`/routines/${routine.id}`} >
                  <div key={routine.id} className="routineCard">
                    <img id="main-image" src={routine.thumbnail}></img>
                    <div id="routine-info">
@@ -82,7 +81,7 @@ class LandingPage extends Component {
                      <h1 id="routine-info">{routine.title} | {routine.level}</h1>
                   </div>
                  </div>
-               </Link>
+               </a>
             )
             })}
           </div>
