@@ -64,7 +64,7 @@ class LandingPage extends Component {
   render(){
     return(
       <div>
-         <div>
+         <div id="full">
            {this.state.routines.map((routine) => {
              return(
               <Link href={`/routines/${routine.id}`} >
