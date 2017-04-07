@@ -65,11 +65,11 @@ class LandingPage extends Component {
     return(
       <div id="background">
         <div id="landing-page-div">
-          <nav id="nav-bar">
+          {/* <nav id="nav-bar">
             <div className="nav-wrapper">
               <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
           </div>
-        </nav>
+        </nav> */}
         <body id="page-body">
          <div className="routineContainer">
            {this.state.routines.map((routine) => {
