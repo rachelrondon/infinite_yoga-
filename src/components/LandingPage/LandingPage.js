@@ -63,7 +63,7 @@ class LandingPage extends Component {
 
   render(){
     return(
-      <div>
+      <div id="background">
         <div id="landing-page-div">
           <nav id="nav-bar">
             <div className="nav-wrapper">
