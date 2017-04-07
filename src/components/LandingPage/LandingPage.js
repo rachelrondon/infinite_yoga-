@@ -64,21 +64,21 @@ class LandingPage extends Component {
   render(){
     return(
       <div>
-         <div className="routineContainer">
+         <div>
            {this.state.routines.map((routine) => {
              return(
               <Link href={`/routines/${routine.id}`} >
-                 <div key={routine.id} className="routineCard">
+                 <div key={routine.id}>
                    <img id="main-image" src={routine.thumbnail}></img>
-                   <div id="routine-info">
+                   {/* <div id="routine-info">
                      <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
                      <h1 id="routine-info">{routine.title} | {routine.level}</h1>
-                  </div>
+                  </div> */}
                  </div>
                </Link>
             )
             })}
-          </div>
+        </div>
     </div>
       );
     }
