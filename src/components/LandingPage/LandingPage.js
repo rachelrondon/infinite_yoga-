@@ -69,7 +69,7 @@ class LandingPage extends Component {
              return(
               <Link href={`/routines/${routine.id}`} >
                  <div key={routine.id}>
-                   <img src={routine.thumbnail}></img>
+                   <img id="main-image" src={routine.thumbnail}></img>
                    {/* <div id="routine-info">
                      <i className="material-icons">play_arrow</i><h4 id="logo-nav">DAILY ROUTINE</h4>
                      <h1 id="routine-info">{routine.title} | {routine.level}</h1>
