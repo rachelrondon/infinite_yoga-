@@ -52,7 +52,7 @@ a {
 
 #main-image {
   width: 100%;
-  bottom:0;
+  height: 100%;
 }
 
 #move-image {
