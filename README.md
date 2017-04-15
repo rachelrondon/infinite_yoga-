@@ -31,4 +31,8 @@ This application was built with CSS/HTML and React on the front-end and Node.js/
 
   Users can replay the routine as desired
 
-  Wireframes: 
+  Wireframes:
+
+  ![wireframe](/src/img/user_stories_wireframe.png)
+  ![wireframe](/src/img/yoga_move_second_wireframe.png)
+  ![wireframe](/src/img/yoga_move_wireframe.png)
